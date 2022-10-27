@@ -1,0 +1,80 @@
+@import '../../style/base.less';
+
+.article {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 0 1rem;
+  border-bottom: 0.2rem solid #eee;
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  &__title {
+    font-size: 2.8rem;
+    font-weight: lighter;
+    margin-bottom: 0.5px;
+    max-width: 50rem;
+    cursor: pointer;
+    &:hover {
+      color: blue;
+    }
+  }
+  &__info {
+    display: flex;
+    font-size: 1.2rem;
+    color: #aaa;
+    margin-bottom: 1rem;
+    > * {
+      display: block;
+      margin-right: 1rem;
+    }
+  }
+  &__outline {
+    max-width: 50rem;
+    color: #777;
+  }
+  &__right {
+    width: 30rem;
+  }
+}
+
+// 窄于 600px
+@media screen and (max-width: 600px) {
+  .article {
+    &__title {
+      max-width: 25rem;
+      font-size: 2rem;
+    }
+    &__info {
+      display: none;
+    }
+    &__outline {
+      max-width: 25rem;
+      font-size: 1.3rem;
+    }
+    &__right {
+      width: 10rem;
+    }
+  }
+}
+
+// 宽于 600px 且窄于 800px
+@media screen and (min-width: 600px) and (max-width: 800px) {
+  .article {
+    &__title {
+      max-width: 40rem;
+      font-size: 2.2rem;
+    }
+    &__right {
+      width: 20rem;
+    }
+    &__outline {
+      max-width: 40rem;
+      font-size: 1.4rem;
+    }
+  }
+}

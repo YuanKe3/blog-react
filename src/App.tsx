@@ -1,26 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react'
+import { HomeOutlined, FileTextOutlined, StarOutlined } from '@ant-design/icons'
+import './App.less'
+import Header from 'layout/Header'
+import Aside from 'layout/Aside'
+import Nav from 'layout/Nav'
+import Main from 'layout/Main'
 
 function App() {
+  const [headList] = useState([
+    {
+      component: <HomeOutlined />,
+      name: '主页'
+    },
+    {
+      component: <FileTextOutlined />,
+      name: '笔记'
+    },
+    {
+      component: <StarOutlined />,
+      name: '收藏'
+    }
+  ])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className='app'>
+      <header className='header'>
+        <Header headList={headList} />
       </header>
+      <nav className='nav'>
+        <Nav />
+      </nav>
+      <main className='main'>
+        <Main />
+      </main>
+      <aside className='aside'>
+        <Aside />
+      </aside>
+      <footer className='footer'>
+        <p>©2022-2022 袁珂版权所有 联系我: QQ:1393764662</p>
+      </footer>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

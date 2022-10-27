@@ -1,0 +1,152 @@
+@import '~antd/dist/antd.less';
+@import 'style/base.less';
+
+// 美化滚动条
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  width: 6px;
+  background: rgba(#101f1c, 0.1);
+  -webkit-border-radius: 2em;
+  -moz-border-radius: 2em;
+  border-radius: 2em;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(144, 147, 153, 0.5);
+  background-clip: padding-box;
+  min-height: 2.8rem;
+  -webkit-border-radius: 2em;
+  -moz-border-radius: 2em;
+  border-radius: 2em;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(144, 147, 153, 0.3);
+}
+
+html,
+body,
+.app {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: @bg_color;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.ellipse-one-line {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.ellipse-lines {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  grid-template-rows: 5rem 5fr 5rem;
+  grid-template-areas: 'header header header' 'nav main aside' 'footer footer footer';
+  .header {
+    grid-area: header;
+    width: 100%;
+  }
+  .nav {
+    grid-area: nav;
+  }
+  .main {
+    grid-area: main;
+    margin: 2rem;
+    background-color: white;
+    box-shadow: 0 0 0.2rem 0.1rem rgba(0, 0, 0, 0.1);
+  }
+  .aside {
+    grid-area: aside;
+  }
+  .footer {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    grid-area: footer;
+    color: #555;
+  }
+}
+
+// 窄于 600px
+@media screen and (max-width: 600px) {
+  .app {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 5rem 5fr;
+    grid-template-areas: 'header header header' 'main main main';
+    .header {
+      grid-area: header;
+      width: 100%;
+    }
+    .nav {
+      display: none;
+    }
+    .aside {
+      display: none;
+    }
+    .main {
+      grid-area: main;
+      margin: 2rem;
+      background-color: white;
+      box-shadow: 0 0 0.2rem 0.1rem rgba(0, 0, 0, 0.1);
+    }
+    .footer {
+      display: none;
+    }
+  }
+}
+
+// 宽于 600px，窄于 800px
+@media screen and (min-width: 600px) and (max-width: 800px) {
+  .app {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 5rem 5fr;
+    grid-template-areas: 'header header header' 'main main main';
+    .header {
+      grid-area: header;
+      width: 100%;
+    }
+    .nav {
+      display: none;
+    }
+    .aside {
+      display: none;
+    }
+    .main {
+      grid-area: main;
+      margin: 2rem;
+      background-color: white;
+      box-shadow: 0 0 0.2rem 0.1rem rgba(0, 0, 0, 0.1);
+    }
+    .footer {
+      display: none;
+    }
+  }
+}
